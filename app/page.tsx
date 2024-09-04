@@ -14,9 +14,7 @@ const page = () => {
       <PopularListing />
       <Insight />
       <FeatureLocation />
-      <div className="container overflow-hidden">
-        <Testimonials />
-      </div>
+      <Testimonials />
     </div>
   );
 };

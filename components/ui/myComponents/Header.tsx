@@ -1,6 +1,6 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { SheetDemo } from "../SheetDemo";
+import { SheetDemo } from "./SheetDemo";
 import Link from "next/link";
 import Image from "next/image";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
