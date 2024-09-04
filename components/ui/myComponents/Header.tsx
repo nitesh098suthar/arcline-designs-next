@@ -1,6 +1,6 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { SheetDemo } from "./SheetDemo";
+import { SheetDemo } from "../SheetDemo";
 import Link from "next/link";
 import Image from "next/image";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -34,11 +34,13 @@ const Header = () => {
           href="https://wa.me/919636537466"
           target="_blank"
           rel="noopener noreferrer"
+          className="flex justify-center items-center"
         >
           <WhatsAppIcon
             className="rounded-md border-[1px] border-border p-1 hover:cursor-pointer hover:bg-secondary"
             style={{ height: "36px", width: "36px" }}
           />
+          {/* <p className="hidden sm:block">Whatsapp</p> */}
         </a>
         <div className="block sm:hidden">
           <SheetDemo />
