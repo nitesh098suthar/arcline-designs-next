@@ -1,19 +1,11 @@
 import React from "react";
-import MenuIcon from "@mui/icons-material/Menu";
 import { SheetDemo } from "./SheetDemo";
 import Link from "next/link";
 import Image from "next/image";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const Header = () => {
-  //   const navLinks = [
-  //     { href: "/", label: "Home" },
-  //     { href: "/category/all", label: "Category" },
-  //     { href: "/about-us", label: "About Us" },
-  //     { href: "/contact-us", label: "Contact Us" },
-  //   ];
-
   return (
-    <div className="h-[56px] border-b-[1px] flex items-center px-4 justify-between">
+    <div className="h-[60px] border-b-[1px] flex items-center px-4 justify-between">
       <Image
         width={120}
         height={40}

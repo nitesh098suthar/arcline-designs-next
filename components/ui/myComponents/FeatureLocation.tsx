@@ -21,8 +21,8 @@ const FeatureLocation = () => {
             <Image
               src="/images/firstImage.jpg"
               alt="location image"
-              width={100}
-              height={100}
+              width={500}
+              height={500}
               className="locationCard"
             />
             <div className="overlay">
@@ -36,8 +36,8 @@ const FeatureLocation = () => {
               <Image
                 src="/images/secondImage.jpg"
                 alt="location image"
-                width={100}
-                height={100}
+                width={500}
+                height={500}
                 className="locationCard"
               />
               <div className="overlay">
@@ -50,8 +50,8 @@ const FeatureLocation = () => {
               <Image
                 src="/images/thirdImage.jpg"
                 alt="location image"
-                width={100}
-                height={100}
+                width={500}
+                height={500}
                 className="locationCard"
               />
               <div className="overlay">
@@ -64,8 +64,8 @@ const FeatureLocation = () => {
               <Image
                 src="/images/fourthImage.jpg"
                 alt="location image"
-                width={100}
-                height={100}
+                width={500}
+                height={500}
                 className="locationCard"
               />
               <div className="overlay">
@@ -78,8 +78,8 @@ const FeatureLocation = () => {
               <Image
                 src="/images/fifthImage.jpg"
                 alt="location image"
-                width={100}
-                height={100}
+                width={500}
+                height={500}
                 className="locationCard"
               />
               <div className="overlay">
@@ -93,8 +93,8 @@ const FeatureLocation = () => {
             <Image
               src="/images/sixthImage.jpg"
               alt="location image"
-              width={100}
-              height={100}
+              width={500}
+              height={500}
               className="locationCard"
             />
             <div className="overlay">
