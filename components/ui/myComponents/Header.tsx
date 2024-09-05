@@ -17,9 +17,16 @@ const Header = () => {
         <Link href="/">
           <p className="">Home</p>
         </Link>
-        <p className="">Category</p>
-        <p className="">About Us</p>
-        <p className="">Contact Us</p>
+        <Link href="/category">
+          <p className="">Category</p>
+        </Link>
+        <Link href="/about-us">
+          <p className="">About Us</p>
+        </Link>
+
+        <Link href="/contact-us">
+          <p className="">Contact Us</p>
+        </Link>
       </div>
       <div className=" flex justify-center gap-2">
         <a

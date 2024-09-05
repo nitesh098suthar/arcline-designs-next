@@ -113,7 +113,10 @@ const Footer = () => {
           <div className="">
             <h1 className="text-sm text-primary mb-2 font-semibold ">Other</h1>
             <p className="text-darkGrey text-xs mb-1  hover:text-black">
-              <Link href="/policy" className="inline-block mobile:w-[100px]">
+              <Link
+                href="/privacy-policy"
+                className="inline-block mobile:w-[100px]"
+              >
                 Privacy Policy
               </Link>
             </p>
