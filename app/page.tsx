@@ -1,3 +1,4 @@
+'use client'
 import BestCategories from "@/components/ui/myComponents/BestCategories";
 import FeatureLocation from "@/components/ui/myComponents/FeatureLocation";
 import Hero from "@/components/ui/myComponents/Hero";

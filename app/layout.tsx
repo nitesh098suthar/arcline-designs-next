@@ -5,7 +5,7 @@ import "./App.css";
 import Header from "@/components/ui/myComponents/Header";
 import Footer from "@/components/ui/myComponents/Footer";
 // import { Provider } from "react-redux";
-
+import Authprovider from "@/components/ui/myComponents/Authprovider/Authprovider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,13 +22,15 @@ export default function RootLayout({
     <html lang="en">
       {/* <Provider store={store}> */}
       <body className={inter.className}>
-        <div>
-          <Header />
-        </div>
-        <div>{children}</div>
-        <div>
-          <Footer />
-        </div>
+        <Authprovider>
+          <div>
+            <Header />
+          </div>
+          <div>{children}</div>
+          <div>
+            <Footer />
+          </div>
+        </Authprovider>
       </body>
       {/* </Provider> */}
     </html>
