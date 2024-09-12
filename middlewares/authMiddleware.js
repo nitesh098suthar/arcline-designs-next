@@ -27,5 +27,3 @@ export const authorizedAdmin = async(req, res, next) =>{
     next();
 
 }
-
-
