@@ -80,7 +80,7 @@ const Footer = () => {
               <Link href="/">Home</Link>
             </p>
             <p className="text-darkGrey text-xs mb-1 hover:text-black">
-              <Link href="/category/all">Category</Link>
+              <Link href="/category">Category</Link>
             </p>
 
             <p className="text-darkGrey text-xs mb-1 hover:text-black">

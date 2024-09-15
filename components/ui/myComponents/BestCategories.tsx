@@ -26,7 +26,7 @@ const BestCategories = () => {
         {bestCategories.map((item, index) => (
           <Link
             key={index}
-            href={`/category/${item.toLowerCase().replace(/\s+/g, "-")}`}
+            href="/category"
             className="border-[1px] border-lightGrey px-6 p-2 rounded-full text-darkGrey hover:bg-lightGrey"
           >
             {item}

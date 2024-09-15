@@ -6,6 +6,7 @@ import Header from "@/components/ui/myComponents/Header";
 import Footer from "@/components/ui/myComponents/Footer";
 // import { Provider } from "react-redux";
 import Authprovider from "@/components/ui/myComponents/Authprovider/Authprovider";
+import TanstackProvider from "@/providers/TanstackProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,15 +23,17 @@ export default function RootLayout({
     <html lang="en">
       {/* <Provider store={store}> */}
       <body className={inter.className}>
-        <Authprovider>
-          <div>
-            <Header />
-          </div>
-          <div>{children}</div>
-          <div>
-            <Footer />
-          </div>
-        </Authprovider>
+        <TanstackProvider>
+          <Authprovider>
+            <div>
+              <Header />
+            </div>
+            <div>{children}</div>
+            <div>
+              <Footer />
+            </div>
+          </Authprovider>
+        </TanstackProvider>
       </body>
       {/* </Provider> */}
     </html>
