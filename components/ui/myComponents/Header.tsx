@@ -15,17 +15,17 @@ const Header = () => {
       />
       <div className="sm:flex justify-center items-center gap-4 hidden ">
         <Link href="/">
-          <p className="">Home</p>
+          <p className="text-sm">Home</p>
         </Link>
         <Link href="/category">
-          <p className="">Category</p>
+          <p className="text-sm">Category</p>
         </Link>
         <Link href="/about-us">
-          <p className="">About Us</p>
+          <p className="text-sm">About Us</p>
         </Link>
 
         <Link href="/contact-us">
-          <p className="">Contact Us</p>
+          <p className="text-sm">Contact Us</p>
         </Link>
       </div>
       <div className=" flex justify-center gap-2">

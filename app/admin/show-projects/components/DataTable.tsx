@@ -19,11 +19,12 @@ export function DataTable() {
     data: allDesigns,
     isLoading,
     isError,
-    isSuccess,
   } = useQuery<any>({
     queryKey: ["ALLDESIGNS"],
     queryFn: async () => {
-      const { data } = await axios.get("http://localhost:3000/api/v1/design");
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/v1/design`
+      );
       return data;
     },
   });

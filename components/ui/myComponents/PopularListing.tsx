@@ -1,35 +1,37 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect } from "react";
-// import ListingCard from "./ListingCard.jsx";
-// import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import ListingCard from "./ListingCard.jsx";
 import { Loader } from "./Loader";
-// import { getAllDesignsAction } from "../../redux/actions/designActions.js";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const PopularListing = () => {
-  // const dispatch = useDispatch();
+  const {
+    data: allDesigns,
+    isLoading: loading,
+    isError,
+  } = useQuery<any>({
+    queryKey: ["ALLDESIGNS"],
+    queryFn: async () => {
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/v1/design`
+      );
+      return data;
+    },
+  });
 
-  // useEffect(() => {
-  //   dispatch(getAllDesignsAction());
-  // }, [dispatch]);
+  // console.log("allDesigns:", allDesigns);
 
-  // const { allListings } = useSelector((state) => state.designReducer);
-  // const { loading } = useSelector((state) => state.globalReducer);
-  // Ensure allListings is defined and not null
-  // const popularListing = allListings
-  //   ? allListings.filter((item) => {
-  //       return item.popular === "true";
-  //     })
-  //   : [];
-  const loading: boolean = false;
+  if (isError) return <p>Error fetching designs.</p>;
+
   return (
     <>
       {loading ? (
         <Loader />
       ) : (
-        <div className="my-12 px-6">
+        <div className="my-12 px-6 h-full">
           <div className="flex justify-center items-center flex-wrap">
             <div className=" flex items-center flex-col mb-8">
               <h1 className="text-3xl font-semibold">Popular Listing</h1>
@@ -40,15 +42,15 @@ const PopularListing = () => {
             </div>
           </div>
           <div className="flex flex-wrap gap-4 w-full justify-center">
-            {/* {popularListing.map((item, i) => (
+            {allDesigns?.allListings?.map((item: any, i: number) => (
               <Link
                 key={i}
-                to={`/design/${item._id}`}
+                href={`/design/${item._id}`}
                 className="lg:w-[30%] w-full lg:h-[40vh] h-fit"
               >
                 <ListingCard item={item} />
               </Link>
-            ))} */}
+            ))}
           </div>
           <div className="flex justify-center">
             <Link href={"category"}>
