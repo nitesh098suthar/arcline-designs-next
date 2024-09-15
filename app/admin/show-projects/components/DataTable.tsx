@@ -15,6 +15,7 @@ import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import { Button } from "@/components/ui/button";
 import { Loader } from "@/components/ui/myComponents/Loader";
 export function DataTable() {
+  console.log("changed the slace");
   const {
     data: allDesigns,
     isLoading,
@@ -23,7 +24,7 @@ export function DataTable() {
     queryKey: ["ALLDESIGNS"],
     queryFn: async () => {
       const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/v1/design`
+        `${process.env.NEXT_PUBLIC_FRONTEND_URL}api/v1/design`
       );
       return data;
     },

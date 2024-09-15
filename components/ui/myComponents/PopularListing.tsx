@@ -16,13 +16,14 @@ const PopularListing = () => {
     queryKey: ["ALLDESIGNS"],
     queryFn: async () => {
       const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/v1/design`
+        `${process.env.NEXT_PUBLIC_FRONTEND_URL}api/v1/design`
       );
       return data;
     },
   });
 
-  // console.log("allDesigns:", allDesigns);
+  console.log("homepage slace removed", allDesigns);
+  console.log("allDesigns:", allDesigns);
 
   if (isError) return <p>Error fetching designs.</p>;
 
