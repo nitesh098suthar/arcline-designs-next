@@ -45,7 +45,7 @@ const ContactUs = () => {
     // <Loader />
     <>loading</>
   ) : (
-    <div className="min-h-[60vh] p-10 w-[600px] mx-auto mobile:w-[380px]">
+    <div className="min-h-[60vh] p-10 sm:w-[620px] mx-auto">
       <div className="flex justify-center items-center ">
         <div className=" flex items-center flex-col mb-8">
           <h1 className="text-3xl font-semibold text-center">

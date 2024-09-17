@@ -32,18 +32,26 @@ export function SheetDemo() {
         </SheetHeader>
         <div className="my-10">
           <div className="flex justify-center flex-col gap-4 ">
-            <Link href={""}>
-              <p className="">Home</p>
-            </Link>
-            <Link href={""}>
-              <p className="">Category</p>
-            </Link>
-            <Link href={""}>
-              <p className="">About Us</p>
-            </Link>
-            <Link href={""}>
-              <p className="">Contact Us</p>
-            </Link>
+            <SheetClose asChild>
+              <Link href="/">
+                <p className="">Home</p>
+              </Link>
+            </SheetClose>
+            <SheetClose asChild>
+              <Link href="/category">
+                <p className="">Category</p>
+              </Link>
+            </SheetClose>
+            <SheetClose asChild>
+              <Link href="/about-us">
+                <p className="">About Us</p>
+              </Link>
+            </SheetClose>
+            <SheetClose asChild>
+              <Link href="/contact-us">
+                <p className="">Contact Us</p>
+              </Link>
+            </SheetClose>
           </div>
         </div>
         <SheetFooter>
