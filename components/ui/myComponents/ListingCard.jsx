@@ -3,7 +3,6 @@ import React from "react";
 
 const ListingCard = ({ item }) => {
   const image = item.houseImage?.secure_url || "/images/fallback.png";
-  console.log("ths is the listing card item : ", item);
   return (
     <div className="h-full">
       <div className="border-[1px] border-lightGrey rounded-xl w-full  hover:bg-lightGrey/30 transition-colors overflow-hidden">

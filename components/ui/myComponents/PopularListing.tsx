@@ -22,8 +22,6 @@ const PopularListing = () => {
     },
   });
 
-  console.log("homepage slace removed", allDesigns);
-  console.log("allDesigns:", allDesigns);
 
   if (isError) return <p>Error fetching designs.</p>;
 

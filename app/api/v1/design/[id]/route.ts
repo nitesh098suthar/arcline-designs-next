@@ -50,7 +50,6 @@ export async function PUT(req: NextRequest) {
     // Extract ID from URL
     const url = new URL(req.url);
     const id = url.pathname.split("/").pop();
-    console.log("id", id);
     if (!id) {
       return NextResponse.json({
         success: false,

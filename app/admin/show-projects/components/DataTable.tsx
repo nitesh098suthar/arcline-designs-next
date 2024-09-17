@@ -15,7 +15,6 @@ import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import { Button } from "@/components/ui/button";
 import { Loader } from "@/components/ui/myComponents/Loader";
 export function DataTable() {
-  console.log("changed the slace");
   const {
     data: allDesigns,
     isLoading,
@@ -30,7 +29,6 @@ export function DataTable() {
     },
   });
 
-  console.log("allDesigns:", allDesigns);
 
   if (isLoading) return <Loader />;
   if (isError) return <p>Error fetching designs.</p>;
