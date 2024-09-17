@@ -8,6 +8,7 @@ import axios from "axios";
 import { Loader } from "@/components/ui/myComponents/Loader";
 import ListingCard from "@/components/ui/myComponents/ListingCard";
 import { useParams } from "next/navigation";
+import BestLocationButton from "@/components/ui/myComponents/BestLocationButton";
 
 function capitalizeFirstLetter(string: string) {
   return string[0].toUpperCase() + string.slice(1);
@@ -51,6 +52,7 @@ const PopularListing = () => {
               </div>
             </div>
           </div>
+          <BestLocationButton />
           <div className="flex flex-wrap gap-4 w-full justify-center">
             {allDesigns?.allListings?.length > 0 ? (
               allDesigns.allListings
