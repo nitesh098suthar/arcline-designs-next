@@ -43,18 +43,24 @@ const PopularListing = () => {
             </div>
           </div>
           <div className="flex flex-wrap gap-4 w-full justify-center">
-            {allDesigns?.allListings?.map((item: any, i: number) => (
-              <Link
-                key={i}
-                href={`/design/${item._id}`}
-                className="lg:w-[30%] w-full lg:h-[40vh] h-fit"
-              >
-                <ListingCard item={item} />
-              </Link>
-            ))}
+            {allDesigns?.allListings?.length > 0 ? (
+              allDesigns.allListings
+                .filter((item: any) => item.popular === "true")
+                .map((item: any, i: number) => (
+                  <Link
+                    key={i}
+                    href={`/design/${item._id}`}
+                    className="lg:w-[30%] w-full lg:h-[40vh] h-fit"
+                  >
+                    <ListingCard item={item} />
+                  </Link>
+                ))
+            ) : (
+              <p>No popular designs found.</p>
+            )}
           </div>
           <div className="flex justify-center">
-            <Link href={"category"}>
+            <Link href={"/category"}>
               <button className="bg-primary text-white rounded-full text-sm px-6 py-2 mt-8 hover:bg-primary/90 transition-colors">
                 Load More
               </button>

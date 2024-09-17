@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+
+import React, { useState } from "react";
 
 import BestCategories from "@/components/ui/myComponents/BestCategories";
 import { Loader } from "@/components/ui/myComponents/Loader";
@@ -7,7 +8,10 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Link from "next/link";
 import ListingCard from "@/components/ui/myComponents/ListingCard";
+
 const CategoryPage = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
   const {
     data: allDesigns,
     isLoading: loading,
@@ -22,20 +26,22 @@ const CategoryPage = () => {
     },
   });
 
-  console.log("homepage slace removed", allDesigns);
-  console.log("allDesigns:", allDesigns);
+  const filteredDesigns = allDesigns?.allListings?.filter((item: any) =>
+    selectedCategory === "All" ? true : item.category === selectedCategory
+  );
 
   if (isError) return <p>Error fetching designs.</p>;
+
   return (
     <>
       <div className="pb-20 px-6">
-        <BestCategories />
+        <BestCategories setSelectedCategory={setSelectedCategory} />
         <div className="">
-          {loading === true ? (
+          {loading ? (
             <Loader />
           ) : (
             <div className="flex flex-wrap gap-4 w-full justify-center">
-              {allDesigns?.allListings?.map((item: any, i: number) => (
+              {filteredDesigns?.map((item: any, i: number) => (
                 <Link
                   key={i}
                   href={`/design/${item._id}`}

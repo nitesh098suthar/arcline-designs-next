@@ -6,13 +6,15 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const Header = () => {
   return (
     <div className="h-[60px] border-b-[1px] flex items-center px-4 justify-between">
-      <Image
-        width={120}
-        height={40}
-        src="/images/logo.png"
-        alt="Logo"
-        className="w-[120px] cursor-pointer"
-      />
+      <Link href="/">
+        <Image
+          width={120}
+          height={40}
+          src="/images/logo.png"
+          alt="Logo"
+          className="w-[120px] cursor-pointer"
+        />
+      </Link>
       <div className="sm:flex justify-center items-center gap-4 hidden ">
         <Link href="/">
           <p className="text-sm">Home</p>

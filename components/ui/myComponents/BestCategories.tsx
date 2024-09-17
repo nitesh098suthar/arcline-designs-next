@@ -10,7 +10,11 @@ const bestCategories = [
   "Temples",
 ];
 
-const BestCategories = () => {
+const BestCategories = ({
+  setSelectedCategory,
+}: {
+  setSelectedCategory: (category: string) => void;
+}) => {
   return (
     <div className="my-10 mobile:text-center mobile:px-2">
       <div className="flex justify-center items-center">
@@ -24,13 +28,13 @@ const BestCategories = () => {
       </div>
       <div className="flex gap-6 justify-center flex-wrap px-6">
         {bestCategories.map((item, index) => (
-          <Link
+          <button
             key={index}
-            href="/category"
+            onClick={() => setSelectedCategory(item)}
             className="border-[1px] border-lightGrey px-6 p-2 rounded-full text-darkGrey hover:bg-lightGrey"
           >
             {item}
-          </Link>
+          </button>
         ))}
       </div>
     </div>
