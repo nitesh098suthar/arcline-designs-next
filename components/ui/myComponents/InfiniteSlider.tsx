@@ -6,7 +6,7 @@ const InfinitySlider = () => {
       <div className="px-6 my-12">
       <div className="flex justify-center items-center">
         <div className=" flex items-center flex-col mb-8">
-          <h1 className="text-3xl font-semibold">Featured Location</h1>
+          <h1 className="text-3xl font-semibold">We have best designs</h1>
           <div className="flex gap-1 my-4">
             <div className="w-14 h-[5px] rounded-full bg-primary"></div>
             <div className="w-4 h-[5px] rounded-full bg-primary"></div>

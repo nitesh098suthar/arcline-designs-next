@@ -6,6 +6,7 @@ import axios from "axios";
 import { useParams } from "next/navigation";
 import { allListings } from "@/components/ui/myComponents/allListings";
 import { Loader } from "@/components/ui/myComponents/Loader";
+import Image from "next/image";
 
 const Details = () => {
   const { id } = useParams();
@@ -40,7 +41,9 @@ const Details = () => {
         <Carousel>
           {oneDesign?.design?.allImages?.map((item: any, i: number) => (
             <div key={i} className="">
-              <img
+              <Image
+                width={400}
+                height={400}
                 src={item?.secure_url}
                 alt=""
                 className="object-cover h-full w-full"
@@ -69,7 +72,9 @@ const Details = () => {
         </div>
         <div className="flex items-center space-x-4 ">
           <div className="w-12 h-12 rounded-md overflow-hidden border-lightGrey border-[1px]">
-            <img
+            <Image
+              width={100}
+              height={100}
               src={oneDesign?.design?.architectImage?.secure_url} // Fallback to a default image if URL is not available
               alt="Architect Image"
               className="object-cover h-full w-full"
