@@ -29,7 +29,6 @@ export function DataTable() {
     },
   });
 
-
   if (isLoading) return <Loader />;
   if (isError) return <p>Error fetching designs.</p>;
 
@@ -66,7 +65,7 @@ export function DataTable() {
             <TableCell>{item.noOfBathRooms}</TableCell>
             <TableCell>{item.noOfBedRooms}</TableCell>
             <TableCell>{item.architectName}</TableCell>
-            <TableCell>{item.popular ? "Yes" : "No"}</TableCell>
+            <TableCell>{item.popular === "true" ? "Yes" : "No"}</TableCell>
             <TableCell>
               <Button variant={"outline"}>
                 <ModeEditIcon className="text-blue-900" />

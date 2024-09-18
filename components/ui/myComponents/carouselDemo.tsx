@@ -44,7 +44,7 @@ export function CarouselSize() {
                 </div>
               </div>
               <div className="">
-                <h1 className="text-black text-center text-2xl font-bold mt-4 mobile:text-sm">
+                <h1 className="text-black text-center text-2xl font-medium mt-4 mobile:text-sm">
                   {item.userName}
                 </h1>
                 <div className="flex justify-center py-3">

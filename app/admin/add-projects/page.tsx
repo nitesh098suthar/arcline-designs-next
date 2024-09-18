@@ -1,27 +1,14 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SwitchingButtons from "../components/SwitchingButtons";
-import { useMediaQuery } from "@mui/material";
 import { useMutation } from "@tanstack/react-query";
-import { title } from "process";
 import { useToast } from "@/hooks/use-toast";
 import httpClient from "@/lib/httpClient";
-// import axios from "axios";
-// import Loader from "../Layout/Loader";
-// import { useDispatch, useSelector } from "react-redux";
-// import {
-//   req,
-//   res,
-//   rej,
-//   clearError,
-//   clearMessage,
-// } from "../../redux/reducers/globalReducer";
-// import toast from "react-hot-toast";
-// import { server } from "../../redux/store";
+import { useRouter } from "next/navigation";
 
 function ProjectAdder() {
   const { toast } = useToast();
-  // function ProjectAdder({ showProjectHandler }) {
+  const router = useRouter();
   const [input, setInput] = useState({
     designTitle: "",
     location: "",
@@ -38,6 +25,7 @@ function ProjectAdder() {
   const [architectImage, setArchitectImage] = useState(null);
   const [houseImage, setHouseImage] = useState(null);
   const [allImages, setAllImages] = useState([]);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const inputHandler = (e: any) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -66,18 +54,22 @@ function ProjectAdder() {
     },
     onSuccess: () => {
       toast({
-        title: "done",
+        title: "Project Added",
       });
+      setIsSubmitting(false);
+      router.push("/admin/show-projects");
     },
     onError: () => {
       toast({
-        title: "error",
+        title: "Error while uploading project",
         variant: "destructive",
       });
+      setIsSubmitting(false);
     },
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    setIsSubmitting(true);
     e.preventDefault();
     console.log("enter in the handler function");
     const formData = new FormData();
@@ -106,7 +98,6 @@ function ProjectAdder() {
     }
     console.log("gathered data");
     mutation.mutate(formData);
-    console.log("reached end of the hander function");
   };
 
   return (
@@ -230,7 +221,7 @@ function ProjectAdder() {
               <div className="flex flex-col space-y-2">
                 <label className="text-sm font-semibold">Popular</label>
                 <select
-                  className="bg-white p-2 outline-none rounded-md w-full"
+                  className="bg-white p-2 outline-none rounded-md w-full cursor-pointer"
                   onChange={inputHandler}
                   value={input.popular}
                   name="popular"
@@ -242,7 +233,7 @@ function ProjectAdder() {
               <div className="flex flex-col space-y-2">
                 <label className="text-sm font-semibold">Category</label>
                 <select
-                  className="bg-white p-2 outline-none rounded-md w-full"
+                  className="bg-white p-2 outline-none rounded-md w-full cursor-pointer"
                   onChange={inputHandler}
                   value={input.category}
                   name="category"
@@ -275,7 +266,7 @@ function ProjectAdder() {
               <div className="flex flex-col space-y-2">
                 <label className="text-sm font-semibold">House Thumbnail</label>
                 <input
-                  className="bg-white p-2 outline-none rounded-md w-full"
+                  className="bg-white p-2 outline-none rounded-md w-full cursor-pointer"
                   type="file"
                   onChange={handleHouseImageChange}
                 />
@@ -283,7 +274,7 @@ function ProjectAdder() {
               <div className="flex flex-col space-y-2">
                 <label className="text-sm font-semibold">Architect Image</label>
                 <input
-                  className="bg-white p-2 outline-none rounded-md w-full"
+                  className="bg-white p-2 outline-none rounded-md w-full cursor-pointer"
                   type="file"
                   onChange={handleArchitectImageChange}
                 />
@@ -293,7 +284,7 @@ function ProjectAdder() {
                   Additional Images
                 </label>
                 <input
-                  className="bg-white p-2 outline-none rounded-md w-full"
+                  className="bg-white p-2 outline-none rounded-md w-full cursor-pointer"
                   type="file"
                   multiple
                   onChange={handleAllImagesChange}
@@ -301,10 +292,15 @@ function ProjectAdder() {
               </div>
             </div>
             <button
-              className="bg-primary p-2 w-full outline-none rounded-md text-white hover:bg-primary/90"
+              className={` p-2 w-full outline-none rounded-md text-white cursor-pointer ${
+                isSubmitting
+                  ? "bg-primary/50 "
+                  : "bg-primary hover:bg-primary/90"
+              }`}
               type="submit"
+              disabled={isSubmitting}
             >
-              Create
+              {isSubmitting ? "Creating..." : "Create"}
             </button>
           </form>
         </div>
