@@ -104,7 +104,7 @@ export async function POST(req: NextRequest) {
       widthInFeet,
       noOfBathRooms,
       noOfBedRooms,
-      areaInSquareFeet,
+      areaInSquareFeet: Number(heightInFeet) * Number(widthInFeet),
       popular,
       architectImage: {
         public_id: architectImage.public_id,
