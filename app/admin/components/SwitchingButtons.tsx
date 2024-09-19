@@ -1,3 +1,5 @@
+'use client'
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 
@@ -27,7 +29,7 @@ const SwitchingButtons = () => {
         <Link href="/">
           <button
             className="bg-primary p-2 w-40 outline-none rounded-md text-white hover:bg-primary/90"
-            //   onClick={logoutHandler}
+            onClick={() => signOut()}
           >
             Logout Admin
           </button>

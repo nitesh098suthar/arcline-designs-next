@@ -1,11 +1,14 @@
+"use client";
 import React from "react";
-import { useSelector } from "react-redux";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+
+
+
 const Hero = () => {
-  // const nav = useNavigate();
-  // const { isAuthenticated } = useSelector((state) => state.userReducer);
-  const isAuthenticated = true;
+  const session : any = useSession();
+  console.log(session);
   return (
     <div id="heroSection" className="overflow-hidden">
       <div className="flex flex-col justify-center h-full mobile:px-2">
@@ -21,12 +24,9 @@ const Hero = () => {
           Design Buildings, Interiors, and Landscapes in Just a Few Clicks
         </p>
         <div className="mobile:flex mobile:justify-center px-6 ">
-          {isAuthenticated && (
+          {session?.data?.user?.role === "admin" && (
             <Link href="admin/add-projects">
-              <button
-                // onClick={() => nav("/admin")}
-                className="flex items-center gap-2 bg-primary text-center w-fit px-4 py-2 text-white font-semibold mt-2 rounded-md hover:bg-primary/90"
-              >
+              <button className="flex items-center gap-2 bg-primary text-center w-fit px-4 py-2 text-white font-semibold mt-2 rounded-md hover:bg-primary/90">
                 <p className="">Dashboard</p>
                 <ArrowOutwardIcon />
               </button>
