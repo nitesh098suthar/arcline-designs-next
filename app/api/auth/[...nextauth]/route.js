@@ -1,85 +1,3 @@
-// import NextAuth from "next-auth";
-// import GoogleProvider from "next-auth/providers/google";
-// import { MongoDBAdapter } from "@auth/mongodb-adapter";
-// import clientPromise from "@/lib/db";
-// import User from "@/Model/User";
-// import connectDB from "@/lib/database";
-
-// export const handler = NextAuth({
-//   adapter: MongoDBAdapter(clientPromise),
-//   providers: [
-//     GoogleProvider({
-//       clientId: process.env.GOOGLE_CLIENT_ID,
-//       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-//     }),
-//   ],
-//   session: {
-//     strategy: "jwt",
-//   },
-//   jwt: {
-//     secret: process.env.NEXTAUTH_SECRET,
-//   },
-//   callbacks: {
-//     async signIn({ user, account, profile }) {
-//       try {
-//         await connectDB();
-
-//         const existingUser = await User.findOne({ email: user.email });
-
-//         if (!existingUser) {
-//           const newUser = new User({
-//             name: user.name,
-//             email: user.email,
-//             image: user.image,
-//             role: "user", // Default role
-//           });
-
-//           await newUser.save();
-//           console.log("New user saved:", newUser);
-//         } else {
-//           console.log("User already exists:", existingUser);
-//         }
-//         return true;
-//       } catch (error) {
-//         console.error("Error in signIn callback:", error);
-//         return false;
-//       }
-//     },
-
-//     async jwt({ token, user }) {
-//       if (user) {
-//         await connectDB();
-//         const dbUser = await User.findOne({ email: user.email });
-
-//         if (dbUser) {
-//           token.role = dbUser.role; // Add the role from the database to the token
-//         }
-//       }
-//       return token;
-//     },
-
-//     async session({ session, token }) {
-//       try {
-//         await connectDB();
-//         const user = await User.findOne({ email: session.user?.email });
-
-//         if (user) {
-//           session.user.role = token.role;
-//           session.user.id = token.id;
-//           session.user.image = user.image;
-//         }
-
-//         return session;
-//       } catch (error) {
-//         console.error("Error in session callback:", error);
-//         return session;
-//       }
-//     },
-//   },
-//   secret: process.env.NEXTAUTH_SECRET,
-// });
-
-// export { handler as GET, handler as POST };
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
@@ -87,7 +5,7 @@ import clientPromise from "@/lib/db";
 import User from "@/Model/User";
 import connectDB from "@/lib/database";
 
-export const handler = NextAuth({
+const handler = NextAuth({
   adapter: MongoDBAdapter(clientPromise),
   providers: [
     GoogleProvider({
@@ -163,4 +81,7 @@ export const handler = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
 });
 
-export { handler as GET, handler as POST };
+// const handler = NextAuth(authOptions);
+
+export const GET = handler;
+export const POST = handler;
