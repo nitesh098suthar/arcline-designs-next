@@ -1,6 +1,5 @@
 import { DataTable } from "./components/DataTable";
 import SwitchingButtons from "../components/SwitchingButtons";
-
 const ProjectGetter = () => {
   return (
     <>
