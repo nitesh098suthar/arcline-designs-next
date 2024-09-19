@@ -8,13 +8,21 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import { Button } from "@/components/ui/button";
 import { Loader } from "@/components/ui/myComponents/Loader";
+import { useToast } from "@/hooks/use-toast"; // Assuming you have a toast hook for notifications
+import { useState } from "react";
+
 export function DataTable() {
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
+  const [isDeleting, setIsDeleting] = useState<boolean>(false);
+
+  // Fetch all designs
   const {
     data: allDesigns,
     isLoading,
@@ -28,6 +36,35 @@ export function DataTable() {
       return data;
     },
   });
+
+  // Mutation to delete design
+  const deleteMutation = useMutation({
+    mutationFn: async (id: string) => {
+      await axios.delete(`http://localhost:3000/api/v1/design/${id}`);
+    },
+    onSuccess: () => {
+      toast({ title: "Design deleted successfully" });
+      queryClient.invalidateQueries({
+        queryKey: ["ALLDESIGNS"], // Refetch designs by query key array
+      });
+      setIsDeleting(false);
+    },
+    onError: () => {
+      toast({
+        title: "Error deleting design",
+        variant: "destructive",
+      });
+      setIsDeleting(false);
+    },
+  });
+
+  // Delete handler
+  const handleDelete = (id: string) => {
+    if (confirm("Are you sure you want to delete this design?")) {
+      deleteMutation.mutate(id);
+    }
+    setIsDeleting(true);
+  };
 
   if (isLoading) return <Loader />;
   if (isError) return <p>Error fetching designs.</p>;
@@ -72,8 +109,16 @@ export function DataTable() {
               </Button>
             </TableCell>
             <TableCell>
-              <Button variant={"outline"}>
-                <DeleteIcon className="text-red-600" />
+              <Button
+                variant={"outline"}
+                onClick={() => handleDelete(item._id)} // Pass the item's id to the delete handler
+              >
+                {isDeleting &&
+                (deleteMutation.variables === item._id) === true ? (
+                  "deleting"
+                ) : (
+                  <DeleteIcon className="text-red-600" />
+                )}
               </Button>
             </TableCell>
           </TableRow>
