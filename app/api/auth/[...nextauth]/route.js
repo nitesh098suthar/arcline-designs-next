@@ -13,16 +13,20 @@
 //       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
 //     }),
 //   ],
+//   session: {
+//     strategy: "jwt",
+//   },
+//   jwt: {
+//     secret: process.env.NEXTAUTH_SECRET,
+//   },
 //   callbacks: {
 //     async signIn({ user, account, profile }) {
 //       try {
-//         await connectDB(); // Ensure the database is connected
+//         await connectDB();
 
-//         // Check if the user already exists in the database
 //         const existingUser = await User.findOne({ email: user.email });
 
 //         if (!existingUser) {
-//           // Create a new user with the fields from the Google profile
 //           const newUser = new User({
 //             name: user.name,
 //             email: user.email,
@@ -41,25 +45,34 @@
 //         return false;
 //       }
 //     },
+
+//     async jwt({ token, user }) {
+//       if (user) {
+//         await connectDB();
+//         const dbUser = await User.findOne({ email: user.email });
+
+//         if (dbUser) {
+//           token.role = dbUser.role; // Add the role from the database to the token
+//         }
+//       }
+//       return token;
+//     },
+
 //     async session({ session, token }) {
 //       try {
-//         // Ensure the database is connected
 //         await connectDB();
-
-//         // Find the user by email from the session object
 //         const user = await User.findOne({ email: session.user?.email });
 
 //         if (user) {
-//           // Attach additional fields to the session object
-//           session.user.role = user.role;
-//           session.user.id = user._id; // Add the user ID to the session, if needed
-//           session.user.image = user.image; // Ensure the image is updated from the database
+//           session.user.role = token.role;
+//           session.user.id = token.id;
+//           session.user.image = user.image;
 //         }
 
 //         return session;
 //       } catch (error) {
 //         console.error("Error in session callback:", error);
-//         return session; // Return the session even if there's an error to avoid breaking the flow
+//         return session;
 //       }
 //     },
 //   },
@@ -83,13 +96,13 @@ export const handler = NextAuth({
     }),
   ],
   session: {
-    strategy: "jwt", // Use JWT for session handling
+    strategy: "jwt", // Ensure that the strategy is set to JWT
   },
   jwt: {
-    secret: process.env.NEXTAUTH_SECRET, // Ensure this matches your secret in the environment
+    secret: process.env.NEXTAUTH_SECRET,
   },
   callbacks: {
-    async signIn({ user, account, profile }) {
+    async signIn({ user }) {
       try {
         await connectDB(); // Ensure the database is connected
 
@@ -117,40 +130,37 @@ export const handler = NextAuth({
       }
     },
 
-    // JWT callback to add id and role to the token
+    // Add the `role` field to the token
     async jwt({ token, user }) {
-      // If the user just signed in, add the id and role to the token
       if (user) {
-        token.id = user.id;
-        token.role = user.role; // You can add custom fields to the token here
+        // Get the role from the database
+        await connectDB();
+        const dbUser = await User.findOne({ email: user.email });
+
+        if (dbUser) {
+          token.role = dbUser.role; // Add the role from the database to the token
+        }
       }
+
       return token;
     },
 
-    // Session callback to pass data from token to session
     async session({ session, token }) {
       try {
-        // Ensure the database is connected
         await connectDB();
-        // console.log("here is token in route", token);
-        // Find the user by email from the session object
-        const user = await User.findOne({ email: session.user?.email });
 
-        if (user) {
-          // Attach additional fields to the session object
-          session.user.role = token.role; // Use the role from the token
-          session.user.id = token.id; // Use the id from the token
-          session.user.image = user.image; // Ensure the image is updated from the database
-        }
+        // Add role to session from token
+        session.user.role = token.role;
+        session.user.id = token.id; // Optionally pass the user ID as well
 
         return session;
       } catch (error) {
         console.error("Error in session callback:", error);
-        return session; // Return the session even if there's an error to avoid breaking the flow
+        return session;
       }
     },
   },
-  secret: process.env.NEXTAUTH_SECRET, // Ensure this matches your secret in the environment
+  secret: process.env.NEXTAUTH_SECRET,
 });
 
 export { handler as GET, handler as POST };
