@@ -40,7 +40,9 @@ export function DataTable() {
   // Mutation to delete design
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
-      await axios.delete(`http://localhost:3000/api/v1/design/${id}`);
+      await axios.delete(
+        `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/v1/design/${id}`
+      );
     },
     onSuccess: () => {
       toast({ title: "Design deleted successfully" });
