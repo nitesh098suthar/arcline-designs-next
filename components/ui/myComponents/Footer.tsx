@@ -16,11 +16,11 @@ const Footer = () => {
           <Link href={"/"}>
             <div className="flex mobile:justify-center">
               <Image
-                width={120}
+                width={200}
                 height={40}
                 src="/images/logo.png"
                 alt="logo"
-                className="w-[120px]"
+                className="w-[180px]"
               />
             </div>
           </Link>

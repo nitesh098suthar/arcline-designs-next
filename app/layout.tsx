@@ -4,9 +4,9 @@ import "./globals.css";
 import "./App.css";
 import Header from "@/components/ui/myComponents/Header";
 import Footer from "@/components/ui/myComponents/Footer";
-// import { Provider } from "react-redux";
 import Authprovider from "@/components/ui/myComponents/Authprovider/Authprovider";
 import TanstackProvider from "@/providers/TanstackProvider";
+import { ThemeModeScript } from "flowbite-react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,6 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* <Provider store={store}> */}
+      <head>
+        <ThemeModeScript />
+      </head>
       <body className={inter.className}>
         <TanstackProvider>
           <Authprovider>

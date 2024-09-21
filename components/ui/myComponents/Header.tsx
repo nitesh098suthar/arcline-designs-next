@@ -8,11 +8,11 @@ const Header = () => {
     <div className="h-[60px] border-b-[1px] flex items-center px-4 justify-between">
       <Link href="/">
         <Image
-          width={120}
+          width={180}
           height={40}
           src="/images/logo.png"
           alt="Logo"
-          className="w-[120px] cursor-pointer"
+          className="w-[160px] cursor-pointer"
         />
       </Link>
       <div className="sm:flex justify-center items-center gap-4 hidden ">

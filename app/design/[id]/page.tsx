@@ -60,10 +60,15 @@ const Details = () => {
         <h1 className="text-2xl text-primary mb-2 capitalize">
           {oneDesign?.design?.designTitle}
         </h1>
-        <p className="text-sm text-darkGrey border-b-[1px] pb-4 text-justify capitalize">
+        <h1 className="text-darkGrey mb-2 text-lg">
+          {oneDesign?.design?.location}
+        </h1>
+
+        <p className="text-sm text-darkGrey border-b-[1px] pb-4 text-justify capitalize mb-4">
           {oneDesign?.design?.designDes}
         </p>
-        <div className="flex py-4 gap-4 border-b-[1px] pb-4 mb-4 mobile:flex-col">
+
+        <div className="flex gap-4 border-b-[1px] pb-4 mb-4 mobile:flex-col">
           <h1>{`${oneDesign?.design?.noOfBedRooms} Bedrooms`}</h1>
           <h1 className="mobile:hidden mobile:text-center ">|</h1>
           <h1>{`${oneDesign?.design?.noOfBathRooms} Bathrooms`}</h1>
@@ -71,7 +76,7 @@ const Details = () => {
           <h1>{`${oneDesign?.design?.areaInSquareFeet} Squarefeet`}</h1>
         </div>
         <div className="flex items-center space-x-4 ">
-          <div className="w-12 h-12 rounded-md overflow-hidden border-lightGrey border-[1px]">
+          <div className="w-12 h-12 rounded-full overflow-hidden border-lightGrey border-[1px]">
             <Image
               width={100}
               height={100}
@@ -82,15 +87,9 @@ const Details = () => {
           </div>
 
           <div>
-            <div className="flex">
-              <h1 className="">Location: </h1>
-              <h1 className="pl-1 text-darkGrey">
-                {oneDesign?.design?.location}
-              </h1>
-            </div>
-            <div className="flex">
-              <h1 className="">{`${oneDesign?.design?.profession} Name: `}</h1>
-              <h1 className="pl-1 text-darkGrey">{`${oneDesign?.design?.architectName}`}</h1>
+            <div className="">
+              <h1 className=" ">{`${oneDesign?.design?.architectName}`}</h1>
+              <h1 className="text-darkGrey text-sm">{`${oneDesign?.design?.profession}`}</h1>
             </div>
           </div>
         </div>

@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Loader } from "@/components/ui/myComponents/Loader";
 import { useToast } from "@/hooks/use-toast"; // Assuming you have a toast hook for notifications
 import { useState } from "react";
+import { Spinner } from "flowbite-react";
 
 export function DataTable() {
   const { toast } = useToast();
@@ -117,7 +118,10 @@ export function DataTable() {
               >
                 {isDeleting &&
                 (deleteMutation.variables === item._id) === true ? (
-                  "deleting"
+                  <Spinner
+                    color="failure"
+                    aria-label="Failure spinner example"
+                  />
                 ) : (
                   <DeleteIcon className="text-red-600" />
                 )}
