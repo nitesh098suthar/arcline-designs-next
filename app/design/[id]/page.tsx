@@ -42,8 +42,8 @@ const Details = () => {
           {oneDesign?.design?.allImages?.map((item: any, i: number) => (
             <div key={i} className="">
               <Image
-                width={400}
-                height={400}
+                width={1920}
+                height={1080}
                 src={item?.secure_url}
                 alt=""
                 className="object-cover h-full w-full"
