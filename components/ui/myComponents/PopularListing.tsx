@@ -22,7 +22,6 @@ const PopularListing = () => {
     },
   });
 
-
   if (isError) return <p>Error fetching designs.</p>;
 
   return (
@@ -30,7 +29,7 @@ const PopularListing = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className="my-12 px-6 h-full">
+        <div className="my-12 px-6 h-full flex flex-col flex-grow">
           <div className="flex justify-center items-center flex-wrap">
             <div className=" flex items-center flex-col mb-8">
               <h1 className="text-3xl font-semibold">Popular Listing</h1>
@@ -40,7 +39,7 @@ const PopularListing = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap gap-4 w-full justify-center">
+          <div className="flex flex-wrap gap-4 w-full justify-center h-full flex-grow">
             {allDesigns?.allListings?.length > 0 ? (
               allDesigns.allListings
                 .filter((item: any) => item.popular === "true")
@@ -48,7 +47,7 @@ const PopularListing = () => {
                   <Link
                     key={i}
                     href={`/design/${item._id}`}
-                    className="lg:w-[30%] w-full lg:h-[40vh] h-fit"
+                    className="lg:w-[30%] w-full h-full"
                   >
                     <ListingCard item={item} />
                   </Link>
@@ -57,9 +56,9 @@ const PopularListing = () => {
               <p>No popular designs found.</p>
             )}
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-2 ">
             <Link href={"/category"}>
-              <button className="bg-primary text-white rounded-full text-sm px-6 py-2 mt-8 hover:bg-primary/90 transition-colors">
+              <button className="bg-primary text-white rounded-full text-sm px-6 py-2 mt-8 hover:bg-primary/90 transition-colors ">
                 Load More
               </button>
             </Link>
