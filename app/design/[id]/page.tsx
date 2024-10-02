@@ -4,7 +4,6 @@ import { Carousel } from "react-responsive-carousel";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useParams } from "next/navigation";
-import { allListings } from "@/components/ui/myComponents/allListings";
 import { Loader } from "@/components/ui/myComponents/Loader";
 import Image from "next/image";
 
