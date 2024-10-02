@@ -27,7 +27,14 @@ const AboutUs = () => {
               of our clients.
             </p>
             <br />
-            <a href="" className="font-semibold text-primary hover:text-primary/80">Ar. Ankit Vishwakarma</a>
+
+            <a
+              href="https://www.linkedin.com/in/ankit-vishwakarma-a33a0b165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"
+              className="font-semibold text-primary hover:text-primary/80"
+            >
+              Ar. Ankit Suthar
+            </a>
           </section>
 
           <section className="mb-6">
