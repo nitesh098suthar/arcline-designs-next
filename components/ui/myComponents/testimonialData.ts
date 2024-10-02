@@ -1,44 +1,38 @@
 const testimonials = [
   {
     userName: "Sumer Singh",
-    userAvatar: "/images/avatar.png",
+    userAvatar: "/images/sums.jpeg",
     description:
-      "Lorem, ipsum dolor sit amet cres iste, optio ipsam doloremque eum ad quas ab mollitia in dolore. Maiores voluptates pariatur sequi.",
-    location: "location",
+      "Our home now reflects a perfect harmony of modern aesthetics and traditional Indian elements, thanks to the team's exceptional creativity. Every room is thoughtfully designed, making it a place where we feel comfortable, proud, and inspired.",
+    location: "Santhu - Jalore",
   },
   {
-    userName: "Sumer Singh",
-    userAvatar: "/images/avatar.png",
+    userName: "Mr. Champawat Bhanwar",
+    userAvatar: "/images/cb.jpg",
     description:
-      "Lorem, ipsum dolor es iste, optio ipsam doloremque eum ad quas ab mollitia in dolore. Maiores voluptates pariatur sequi.",
-    location: "location",
+      "The workspace they delivered is beyond our expectations! It's designed to promote both productivity and relaxation, with features like natural lighting and greenery enhancing the environment. Both our team and clients are impressed with the transformation.",
+    location: "Jaipur - Rajasthan",
   },
   {
-    userName: "Sumer Singh",
+    userName: "Mr. Prakash Sompura",
     userAvatar: "/images/avatar.png",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, velit praesentium quo voluptate necessitatibus maiores iste, optio ipsam doloremque eum ad quas ab mollitia in dolore. Maiores voluptates pariatur sequi.",
-    location: "location",
+      "We entrusted them with designing our Jain temple, and the result is simply breathtaking. The care they took in honoring our cultural values while incorporating detailed craftsmanship has created a sacred space that will serve our community for generations.",
+    location: "Ahmedabad - Gujrat",
   },
   {
-    userName: "Sumer Singh",
-    userAvatar: "/images/avatar.png",
-    description: "Lorem, ipsum dolor sit amet ctur sequi.",
-    location: "location",
-  },
-  {
-    userName: "Sumer Singh",
-    userAvatar: "/images/avatar.png",
+    userName: "Mr. Ayushman Sharma",
+    userAvatar: "/images/aayu.jpg",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, vs maiores iste, optio ipsam doloremque eum ad quas ab mollitia in dolore. Maiores voluptates pariatur sequi.",
-    location: "location",
+      "The team delivered a workspace that is both stylish and incredibly practical. With their smart design approach, my office feels spacious, well-lit, and ideal for a productive workday. It's exactly the professional yet welcoming atmosphere I was hoping for.",
+    location: "Ahmedabad - Gujrat",
   },
   {
-    userName: "Sumer Singh",
-    userAvatar: "/images/avatar.png",
+    userName: "Mr. Abhinav Bajaj",
+    userAvatar: "/images/ab.jpg",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisiciibus maiores iste, optio ipsam doloremque eum ad quas ab mollitia in dolore. Maiores voluptates pariatur sequi.",
-    location: "location",
+      "Our resort has been completely transformed into a luxurious oasis, seamlessly blending the beauty of nature with modern design. Guests often compliment the unique architecture that enhances their experience. I couldn't be more pleased with the outcome.",
+    location: "Indore - Madhya Pradesh",
   },
 ];
 

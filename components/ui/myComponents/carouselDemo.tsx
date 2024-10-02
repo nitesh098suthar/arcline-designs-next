@@ -44,20 +44,12 @@ export function CarouselSize() {
                 </div>
               </div>
               <div className="">
-                <h1 className="text-black text-center text-2xl font-medium mt-4 mobile:text-sm">
+                <h1 className="text-black text-center text-xl font-medium mt-4 mobile:text-sm">
                   {item.userName}
                 </h1>
-                <div className="flex justify-center py-3">
-                  <p className="text-primary text-center mobile:text-xs">
-                    {item.location}
-                  </p>
-                  <p className="text-primary text-center px-2 mobile:text-xs">
-                    at
-                  </p>
-                  <p className="text-primary text-center mobile:text-xs">
-                    {item.location}
-                  </p>
-                </div>
+                <p className="text-primary text-center mobile:text-xs my-2">
+                  {item.location}
+                </p>
                 <p className="text-black text-center text-sm mobile:text-xs line-clamp-4">
                   {item.description}
                 </p>

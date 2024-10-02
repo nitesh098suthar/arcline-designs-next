@@ -19,7 +19,7 @@ const FeatureLocation = () => {
         <div className="child forOverlay">
           <Link href={"/location/jaipur"} className="relative">
             <Image
-              src="/images/firstImage.jpg"
+              src="/images/jr.jpg"
               alt="location image"
               width={500}
               height={500}
@@ -34,7 +34,7 @@ const FeatureLocation = () => {
           <div className="grandChild forOverlay">
             <Link href={"/location/pali"} className="relative">
               <Image
-                src="/images/secondImage.jpg"
+                src="/images/pl.jpg"
                 alt="location image"
                 width={500}
                 height={500}
@@ -48,7 +48,7 @@ const FeatureLocation = () => {
           <div className="grandChild forOverlay">
             <Link href={"/location/sirohi"} className="relative">
               <Image
-                src="/images/thirdImage.jpg"
+                src="/images/sr.jpg"
                 alt="location image"
                 width={500}
                 height={500}
@@ -62,7 +62,7 @@ const FeatureLocation = () => {
           <div className="grandChild forOverlay">
             <Link href={"/location/barmer"} className="relative">
               <Image
-                src="/images/fourthImage.jpg"
+                src="/images/br.jpg"
                 alt="location image"
                 width={500}
                 height={500}
@@ -76,7 +76,7 @@ const FeatureLocation = () => {
           <div className="grandChild forOverlay">
             <Link href={"/location/ahmedabad"} className="relative">
               <Image
-                src="/images/fifthImage.jpg"
+                src="/images/ah.jpg"
                 alt="location image"
                 width={500}
                 height={500}
@@ -91,7 +91,7 @@ const FeatureLocation = () => {
         <div className="child forOverlay">
           <Link href={"/location/jalore"} className="relative">
             <Image
-              src="/images/sixthImage.jpg"
+              src="/images/jl.jpg"
               alt="location image"
               width={500}
               height={500}

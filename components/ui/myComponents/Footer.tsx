@@ -31,33 +31,28 @@ const Footer = () => {
             clients.
           </p>
           {/* <div className="border-2 border-green-200"> */}
-          <div className="flex gap-2 mobile:justify-center">
+          <div className="flex gap-2 mobile:justify-center items-center">
             <a
-              className="bg-primary grid p-1 place-content-center rounded-md  hover:bg-primary/90"
+              className="   "
               target="_blank"
               href="https://www.instagram.com/arcline.architects?igsh=OTN5cDIwc3NhdTBu"
             >
-              <InstagramIcon style={{ fontSize: 24, color: "#fff" }} />
+              
+              <InstagramIcon style={{ fontSize: 30, color: "black" }} />
             </a>
             <a
-              className="bg-primary grid p-1 place-content-center rounded-md hover:bg-primary/90 "
+              className=" "
               target="_blank"
               href="https://www.facebook.com/share/j161GuLrF2zwWW5C/?mibextid=qi2Omg"
             >
-              <FacebookIcon style={{ fontSize: 24, color: "#fff" }} />
+              <FacebookIcon style={{ fontSize: 32, color: "black" }} />
             </a>
-            {/* <a className="bg-primary grid p-1 place-content-center rounded-md  hover:bg-primary/90">
-              <XIcon style={{ fontSize: 24, color: "#fffF" }} />
-            </a> */}
-            {/* <a className="bg-primary grid p-1 place-content-center rounded-md  hover:bg-primary/90">
-              <YouTubeIcon style={{ fontSize: 24, color: "#fff" }} />
-            </a> */}
             <a
-              className="bg-primary grid p-1 place-content-center rounded-md  hover:bg-primary/90"
+              className=""
               target="_blank"
               href="https://www.linkedin.com/in/ankit-vishwakarma-a33a0b165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             >
-              <LinkedInIcon style={{ fontSize: 24, color: "#fff" }} />
+              <LinkedInIcon style={{ fontSize: 32, color: "black" }} />
             </a>
           </div>
           <div className="pt-4 hidden mobile:flex mobile: justify-center ">
