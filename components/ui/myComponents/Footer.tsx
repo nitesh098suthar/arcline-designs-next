@@ -37,7 +37,6 @@ const Footer = () => {
               target="_blank"
               href="https://www.instagram.com/arcline.architects?igsh=OTN5cDIwc3NhdTBu"
             >
-              
               <InstagramIcon style={{ fontSize: 30, color: "black" }} />
             </a>
             <a
@@ -57,7 +56,10 @@ const Footer = () => {
           </div>
           <div className="pt-4 hidden mobile:flex mobile: justify-center ">
             <p className="text-darkGrey text-xs mb-1  hover:text-black  mobile:text-primary">
-              <Link href="/policy" className="inline-block mobile:w-[100px]">
+              <Link
+                href="/privacy-policy"
+                className="inline-block mobile:w-[100px]"
+              >
                 Privacy Policy
               </Link>
             </p>

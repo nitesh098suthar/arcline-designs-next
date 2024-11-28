@@ -5,7 +5,9 @@ import Image from "next/image";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const Header = () => {
   return (
-    <div className="h-[60px] border-b-[1px] flex items-center px-4 justify-between">
+    // <div className="h-[60px] border-b-[1px] flex items-center px-4 justify-between bg-white">
+    <div className="h-[60px] border-b-[1px] flex items-center px-4 justify-between bg-white backdrop-blur-md bg-opacity-75">
+
       <Link href="/">
         <Image
           width={180}

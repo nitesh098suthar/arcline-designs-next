@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-[60vh] py-10">
+    <div className="min-h-[calc(100vh-335px)] py-10">
       <div className="flex justify-center items-center">
         <div className="flex items-center flex-col mb-8">
           <h1 className="text-3xl font-semibold text-center">

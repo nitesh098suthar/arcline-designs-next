@@ -21,24 +21,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <Provider store={store}> */}
       <head>
         <ThemeModeScript />
       </head>
       <body className={inter.className}>
         <TanstackProvider>
           <Authprovider>
-            <div>
+            <div className="top-0 left-0 sticky">
               <Header />
             </div>
             <div>{children}</div>
-            <div>
+            <div className="h-[274px]">
               <Footer />
             </div>
           </Authprovider>
         </TanstackProvider>
       </body>
-      {/* </Provider> */}
     </html>
   );
 }

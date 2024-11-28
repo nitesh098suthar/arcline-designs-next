@@ -1,51 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-// import { contactUsAction } from "../../redux/actions/otherAction";
-// import toast from "react-hot-toast";
-// import { clearError, clearMessage } from "../../redux/reducers/globalReducer";
-// import Loader from "./Loader";
-
+import { Loader } from "@/components/ui/myComponents/Loader";
+import React from "react";
 const ContactUs = () => {
-  // const [input, setInput] = useState({
-  //   name: "",
-  //   phone: "",
-  //   message: "",
-  // });
-
-  // const dispatch = useDispatch();
-  // const inputHandler = (e) => {
-  // setInput({ ...input, [e.target.name]: e.target.value });
-  //   console.log(input);
-  // };
-
-  // const submitHandler = async () => {
-  //   dispatch(contactUsAction(input.name, input.phone, input.message));
-  //   setInput({
-  //     name: "",
-  //     phone: "",
-  //     message: "",
-  //   });
-  // };
-  // const { loading, error, message } = useSelector(
-  //   (state) => state.globalReducer
-  // );
-  // useEffect(() => {
-  //   if (error) {
-  //     toast.error(error);
-  //     dispatch(clearError());
-  //   }
-  //   if (message) {
-  //     toast.success("Message sent successfully.");
-  //     dispatch(clearMessage());
-  //   }
-  // }, [dispatch, clearMessage, clearError, message, error, toast]);
-
   const loading: boolean = false;
   return loading ? (
-    // <Loader />
-    <>loading</>
+    <Loader />
   ) : (
-    <div className="min-h-[60vh] p-10 sm:w-[620px] mx-auto">
+    <div className="min-h-[calc(100vh-335px)] p-10 sm:w-[620px] mx-auto">
       <div className="flex justify-center items-center ">
         <div className=" flex items-center flex-col mb-8">
           <h1 className="text-3xl font-semibold text-center">
@@ -61,9 +21,7 @@ const ContactUs = () => {
         <div className="w-full  mb-3">
           <p>Name</p>
           <input
-            // onChange={inputHandler}
             name="name"
-            // value={input.name}
             type="text"
             placeholder="Enter your name"
             className="bg-whtie p-2 outline-none rounded-md w-full"
@@ -72,9 +30,7 @@ const ContactUs = () => {
         <div className="w-full  mb-3">
           <p>Phone Number</p>
           <input
-            // onChange={inputHandler}
             name="phone"
-            // value={input.phone}
             type="text"
             placeholder="Enter your phone"
             className="bg-whtie p-2 outline-none rounded-md w-full"
@@ -83,9 +39,7 @@ const ContactUs = () => {
         <div className="w-full  mb-3">
           <p>Message</p>
           <textarea
-            // onChange={inputHandler}
             name="message"
-            // value={input.message}
             placeholder="Your message"
             id=""
             rows={4}
@@ -93,10 +47,7 @@ const ContactUs = () => {
           ></textarea>
         </div>
         <div>
-          <button
-            // onClick={submitHandler}
-            className="text-white bg-primary p-2 w-full outline-none rounded-md"
-          >
+          <button className="text-white bg-primary p-2 w-full outline-none rounded-md">
             Send Message
           </button>
         </div>

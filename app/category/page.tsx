@@ -40,12 +40,12 @@ const CategoryPage = () => {
           {loading ? (
             <Loader />
           ) : (
-            <div className="flex flex-wrap gap-4 w-full justify-center">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-6  w-full">
               {filteredDesigns?.map((item: any, i: number) => (
                 <Link
                   key={i}
                   href={`/design/${item._id}`}
-                  className="lg:w-[30%] w-full lg:h-[40vh] h-fit"
+                  className="h-fit"
                 >
                   <ListingCard item={item} />
                 </Link>
