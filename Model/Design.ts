@@ -32,12 +32,10 @@ const designSchema = new Schema({
   designTitle: {
     type: String,
     minLength: [4, "Title at least 4 characters"],
-    maxLength: [80, "Title exceeds length"],
   },
   designDes: {
     type: String,
     minLength: [4, "Description at least 4 characters"],
-    maxLength: [200, "Description exceeds length"],
   },
   location: String,
   category: String,
