@@ -7,7 +7,6 @@ const Header = () => {
   return (
     // <div className="h-[60px] border-b-[1px] flex items-center px-4 justify-between bg-white">
     <div className="h-[60px] border-b-[1px] flex items-center px-4 justify-between bg-white backdrop-blur-md bg-opacity-75">
-
       <Link href="/">
         <Image
           width={180}
@@ -19,17 +18,17 @@ const Header = () => {
       </Link>
       <div className="sm:flex justify-center items-center gap-4 hidden ">
         <Link href="/">
-          <p className="text-sm">Home</p>
+          <p className="text-sm hover:opacity-85">Home</p>
         </Link>
         <Link href="/category">
-          <p className="text-sm">Category</p>
+          <p className="text-sm hover:opacity-85">Category</p>
         </Link>
         <Link href="/about-us">
-          <p className="text-sm">About Us</p>
+          <p className="text-sm hover:opacity-85">About Us</p>
         </Link>
 
         <Link href="/contact-us">
-          <p className="text-sm">Contact Us</p>
+          <p className="text-sm hover:opacity-85">Contact Us</p>
         </Link>
       </div>
       <div className=" flex justify-center gap-2">
@@ -40,10 +39,9 @@ const Header = () => {
           className="flex justify-center items-center"
         >
           <WhatsAppIcon
-            className="rounded-md border-[1px] border-border p-1 hover:cursor-pointer hover:bg-secondary"
+            className="hover:opacity-90 transition-opacity"
             style={{ height: "36px", width: "36px" }}
           />
-          {/* <p className="hidden sm:block">Whatsapp</p> */}
         </a>
         <div className="block sm:hidden">
           <SheetDemo />

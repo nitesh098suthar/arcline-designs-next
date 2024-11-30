@@ -37,21 +37,30 @@ const Footer = () => {
               target="_blank"
               href="https://www.instagram.com/arcline.architects?igsh=OTN5cDIwc3NhdTBu"
             >
-              <InstagramIcon style={{ fontSize: 30, color: "black" }} />
+              <InstagramIcon
+                className="hover:opacity-90 transition-opacity"
+                style={{ fontSize: 30, color: "black" }}
+              />
             </a>
             <a
               className=" "
               target="_blank"
               href="https://www.facebook.com/share/j161GuLrF2zwWW5C/?mibextid=qi2Omg"
             >
-              <FacebookIcon style={{ fontSize: 32, color: "black" }} />
+              <FacebookIcon
+                className="hover:opacity-90 transition-opacity"
+                style={{ fontSize: 32, color: "black" }}
+              />
             </a>
             <a
               className=""
               target="_blank"
               href="https://www.linkedin.com/in/ankit-vishwakarma-a33a0b165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             >
-              <LinkedInIcon style={{ fontSize: 32, color: "black" }} />
+              <LinkedInIcon
+                className="hover:opacity-90 transition-opacity"
+                style={{ fontSize: 32, color: "black" }}
+              />
             </a>
           </div>
           <div className="pt-4 hidden mobile:flex mobile: justify-center ">

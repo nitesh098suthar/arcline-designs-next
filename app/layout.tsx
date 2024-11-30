@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <TanstackProvider>
           <Authprovider>
-            <div className="top-0 left-0 sticky">
+            <div className="top-0 left-0 sticky z-50">
               <Header />
             </div>
             <div>{children}</div>
