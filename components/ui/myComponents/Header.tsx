@@ -40,7 +40,7 @@ const Header = () => {
         >
           <WhatsAppIcon
             className="hover:opacity-90 transition-opacity"
-            style={{ height: "36px", width: "36px" }}
+            style={{ height: "32px", width: "32px" }}
           />
         </a>
         <div className="block sm:hidden">

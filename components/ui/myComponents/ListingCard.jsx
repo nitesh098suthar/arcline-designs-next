@@ -17,7 +17,7 @@ const ListingCard = ({ item }) => {
         </div>
         <div className="p-2 h-full">
           <div className="flex gap-2 items-baseline px-2">
-            <h3 className="text-primary font-medium text-lg">{`${item?.widthInFeet}' x ${item?.heightInFeet}'`}</h3>
+            <h3 className="text-primary font-medium text-lg">{`${item?.heightInFeet} x ${item?.widthInFeet}`}</h3>
             <p className="text-darkGrey capitalize">{item?.category}</p>
           </div>
           <h1 className="px-2 font-semibold text-xl pt-2">

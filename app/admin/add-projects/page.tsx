@@ -145,23 +145,23 @@ function ProjectAdder() {
               <div className="flex space-x-4">
                 <div className="flex flex-col space-y-2 w-full">
                   <label className="text-sm font-semibold">
-                    Height in Feet
+                    Width in Feet
                   </label>
                   <input
                     className="bg-white p-2 outline-none rounded-md w-full"
                     type="text"
-                    placeholder="Enter height in feet"
+                    placeholder="Enter width in feet"
                     onChange={numberInputHandler}
                     value={input.heightInFeet}
                     name="heightInFeet"
                   />
                 </div>
                 <div className="flex flex-col space-y-2 w-full">
-                  <label className="text-sm font-semibold">Width in Feet</label>
+                  <label className="text-sm font-semibold">Length in Feet</label>
                   <input
                     className="bg-white p-2 outline-none rounded-md w-full"
                     type="text"
-                    placeholder="Enter width in feet"
+                    placeholder="Enter length in feet"
                     onChange={numberInputHandler}
                     value={input.widthInFeet}
                     name="widthInFeet"

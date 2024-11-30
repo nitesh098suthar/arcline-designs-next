@@ -33,7 +33,8 @@ const handler = NextAuth({
             name: user.name,
             email: user.email,
             image: user.image,
-            role: "admin", // Default role
+            // role: "admin",
+            role: "user",
           });
 
           await newUser.save();

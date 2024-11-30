@@ -16,7 +16,7 @@ export function SheetDemo() {
     <Sheet>
       <SheetTrigger asChild>
         <MenuRoundedIcon
-          className="rounded-md border-[1px] border-border p-1 hover:cursor-pointer hover:bg-secondary"
+          className="hover:opacity-90 transition-opacity cursor-pointer"
           style={{ height: "36px", width: "36px" }}
         />
       </SheetTrigger>
