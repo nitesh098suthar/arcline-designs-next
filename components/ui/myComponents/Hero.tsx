@@ -3,12 +3,11 @@ import React, { useState, useEffect } from "react";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-
 const changingTexts = [
-  "Your Dream House",
-  "A Modern Space",
-  "A Cozy Home",
-  "An Elegant Villa",
+  "Perfect Sanctuary",
+  "Ultimate Retreat",
+  "Stylish Haven",
+  "Serene Escape",
 ];
 
 const Hero = () => {
@@ -52,7 +51,7 @@ const Hero = () => {
             Let&#39;s Build
           </h1>
           <h1 className="text-primary text-5xl font-bold mobile:text-center mobile:px-0 px-6">
-            {currentText}
+            Your {currentText}
           </h1>
         </div>
         <p className="text-xl text-darkGrey mobile:text-center mobile:px-0 px-6">
