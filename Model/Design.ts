@@ -35,7 +35,6 @@ const designSchema = new Schema({
   },
   designDes: {
     type: String,
-    minLength: [4, "Description at least 4 characters"],
   },
   location: String,
   category: String,
