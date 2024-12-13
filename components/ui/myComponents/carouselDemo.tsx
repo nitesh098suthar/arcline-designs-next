@@ -38,8 +38,8 @@ export function CarouselSize() {
                     src={item.userAvatar}
                     alt="avatar"
                     className="h-[100%]"
-                    width={200}
-                    height={200}
+                    width={2000}
+                    height={2000}
                   />
                 </div>
               </div>

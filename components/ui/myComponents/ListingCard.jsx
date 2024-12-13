@@ -8,8 +8,8 @@ const ListingCard = ({ item }) => {
       <div className="border-[1px] border-lightGrey rounded-xl w-full  hover:bg-lightGrey/30 transition-colors overflow-hidden">
         <div className="p-2 overflow-hidden h-full w-full ">
           <Image
-            height={300}
-            width={300}
+            height={2000}
+            width={2000}
             src={image}
             alt="architure-image"
             className="rounded-md object-cover w-full h-full block"
@@ -35,8 +35,8 @@ const ListingCard = ({ item }) => {
           <div className="flex bordre-lightGrey border-t-[1px] pt-3 items-center">
             <div className="w-[50px] h-[50px] overflow-hidden rounded-full border-[1px] border-lightGrey">
               <Image
-                height={300}
-                width={300}
+                height={2000}
+                width={2000}
                 src={item.architectImage?.secure_url}
                 alt=""
                 className="object-cover h-full w-full"
